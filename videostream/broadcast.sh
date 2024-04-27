@@ -3,7 +3,7 @@
 source /etc/container_environment.sh
 
 ffmpeg \
-    -re -f lavfi -i "movie=filename=${VS_VIDEO_SOURCE}:loop=0, setpts=N/(FRAME_RATE*TB)" \
+    -f gdigrab -framerate 30 -i title="[FiveM_b2802_GTAProcess.exe]: FiveM® by Cfx.re - [ESP/LAT] -- 🍻🍻🍸El Bar RP🍸🍻🍻  -- DISCORD: discord.gg/DWJZnPmz9J --" \
     -thread_queue_size 512 -i "${VS_AUDIO_SOURCE}" \
     -map 0:v:0 -map 1:a:0 \
     -map_metadata:g 1:g \
@@ -13,3 +13,4 @@ ffmpeg \
     -vcodec libx264 -pix_fmt yuv420p -preset ${VS_QUALITY} -r ${VS_FPS} -g $((${VS_FPS} * 2)) -b:v ${VS_VBR} \
     -acodec libmp3lame -ar 44100 -threads 6 -qscale:v 3 -b:a 320000 -bufsize 512k \
     -f flv "${VS_RTMP_SERVER}"
+
