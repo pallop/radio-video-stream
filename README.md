@@ -18,7 +18,7 @@ Run the following commands on your host to clone this repository:
 
 ```bash
 mkdir -p /tmp/ac_videostream
-git clone https://github.com/AzuraCast/radio-video-stream.git /tmp/ac_videostream
+git clone https://github.com/pallop/radio-video-stream.git /tmp/ac_videostream
 mv /tmp/ac_videostream/videostream /var/azuracast/videostream
 mv /tmp/ac_videostream/docker-compose.override.yml /var/azuracast/docker-compose.override.yml
 ```
